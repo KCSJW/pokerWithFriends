@@ -1,4 +1,4 @@
-# pokerWithFriends
+# pokerWithFriends (Work in progress)
 
 (Make sure you're on your branch)
 
@@ -16,4 +16,4 @@ git rebase master
 
 git push master 
 
-make a pull requests
+Create pull request
