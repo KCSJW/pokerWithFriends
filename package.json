@@ -1,0 +1,35 @@
+{
+  "name": "pokerwithfriends",
+  "version": "1.0.0",
+  "description": "(Make sure you're on your branch)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"node app\" \"npm run client\"",
+    "storybook": "npm run storybook --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -prefix client && npm run build -prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KCSJW/pokerWithFriends.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KCSJW/pokerWithFriends/issues"
+  },
+  "homepage": "https://github.com/KCSJW/pokerWithFriends#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.0.0"
+  }
+}
