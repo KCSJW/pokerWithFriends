@@ -1,6 +1,6 @@
 # pokerWithFriends
 
-git pull
+(Make sure you're on your branch)
 
 git add .
 
