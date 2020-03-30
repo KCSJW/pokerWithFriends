@@ -12,10 +12,10 @@ module.exports = class Deck {
         const nums = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
         for (let i = 0; i < suits.length; i++) {
             for (let j = 0; j < nums.length; j++) {
-                let card = new Card(nums[j], suits[i])
-                // let card = [nums[j],suits[i]].join('');
-                // this.deck.push([nums[j], suits[i], card])
-                this.deck.push(card)
+                // let card = new Card(nums[j], suits[i])
+                // this.deck.push(card)
+                let card = [nums[j],suits[i]].join('');
+                this.deck.push([nums[j], suits[i], card])
             };
         };
     };
