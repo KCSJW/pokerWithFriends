@@ -10,10 +10,10 @@ git checkout master
 
 git pull master
 
-git checkout ______ <-- your beach's name
+git checkout ______ <-- your branch's name
 
 git rebase master
 
-git push master 
+git push origin _____  <-- your branch's name
 
-Create pull request
+on github page Create pull request
