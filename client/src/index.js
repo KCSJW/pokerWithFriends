@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./utils/session";
 import { logout } from "./actions/sessionActions";
+import io from 'socket.io-client';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -26,5 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore({});
   }
   const root = document.getElementById("root");
+  const socket = io();
+  socket.connect();
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 const User = mongoose.model("User");
 let keys;
 
-if (process.env.NODE_ENV === "production") {
-  keys = require("./keys_prod");
-} else {
-  keys = require("./keys");
-}
+// if (process.env.NODE_ENV === "production") {
+//   keys = require("./keys_prod");
+// } else {
+//   keys = require("./keys");
+// }
+keys = require("./keys");
 
 const options = {};
 options.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
