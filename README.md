@@ -24,5 +24,5 @@ git push origin ______  <-- your branch's name
 
 on github page Create pull request
 
-https://github.com/KCSJW/pokerWithFriends.git
+https://github.com/KCSJW/pokerWithFriends.gity
 git@github.com:KCSJW/pokerWithFriends.git
