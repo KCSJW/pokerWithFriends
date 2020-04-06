@@ -12,14 +12,17 @@ git pull master
 
 git checkout ______ <-- your branch's name
 
-Make changes
+<!-- Make changes
 
 git add -A
 
-git commit -m "<message>"
+git commit -m "<message>" -->
 
 git rebase master
 
 git push origin ______  <-- your branch's name
 
 on github page Create pull request
+
+https://github.com/KCSJW/pokerWithFriends.git
+git@github.com:KCSJW/pokerWithFriends.git
