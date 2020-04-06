@@ -12,11 +12,11 @@ git pull master
 
 git checkout ______ <-- your branch's name
 
-Make changes
+<!-- Make changes
 
 git add -A
 
-git commit -m "<message>"
+git commit -m "<message>" -->
 
 git rebase master
 
