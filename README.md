@@ -23,3 +23,6 @@ git rebase master
 git push origin ______  <-- your branch's name
 
 on github page Create pull request
+
+https://github.com/KCSJW/pokerWithFriends.git
+git@github.com:KCSJW/pokerWithFriends.git
