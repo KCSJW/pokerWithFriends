@@ -8,21 +8,12 @@ git commit -m "***"
 
 git checkout master 
 
-git pull master
+git pull git@github.com:KCSJW/pokerWithFriends.git
 
 git checkout ______ <-- your branch's name
-
-<!-- Make changes
-
-git add -A
-
-git commit -m "<message>" -->
 
 git rebase master
 
 git push origin ______  <-- your branch's name
 
-on github page Create pull request
-
-https://github.com/KCSJW/pokerWithFriends.git
-git@github.com:KCSJW/pokerWithFriends.git
+on github page Create pull request ADD REVIEWER on top right
