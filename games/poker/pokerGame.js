@@ -33,6 +33,27 @@ module.exports = class PokerGame {
         this.winner;
     }
 
+    runGame(){
+        this.dealCards();
+        while(this.players.length > 1){
+            this.bettingRound();
+            this.flop();
+            this.bettingRound();
+            this.turn();
+            this.bettingRound();
+            this.river();
+            this.bettingRound();
+            this.winByCompare(); 
+        }
+    }
+
+    dealCards(){
+        this.players.forEach( player =>{
+            player.hand.push(this.deck.deal());
+            player.hand.push(this.deck.deal());          
+        })
+    }
+
     bettingRound(){
         let currentPlayerPos;
         if(this.firstRound){ //first round specific conditions
@@ -101,6 +122,10 @@ module.exports = class PokerGame {
     winByKO(){
         // Winning because everyone else folded.
         this.winner = this.players[0];
+    }
+
+    winByCompare(){
+        // Game ends. Everyone shows their hand. Highest score wins
     }
     
 
