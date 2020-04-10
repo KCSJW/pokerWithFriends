@@ -28,21 +28,51 @@ module.exports = class PokerGame {
         this.community = [];    // Common cards on the table
         this.smallBlind = smallBlind;   // Can be made adjustable in future
         this.bigBlind = 2 * smallBlind;     // Always double that of Small Blind
-        this.requiredBet = 0;   // What every player has to contribute when their turn comes.
+        this.requiredBet = bigBlind;   // What every player has to contribute when their turn comes.
+        this.firstRound = true;
+        this.winner;
     }
 
     bettingRound(){
+        let currentPlayerPos;
+        if(this.firstRound){ //first round specific conditions
+            this.players[0].bet = this.smallBlind;
+            this.players[1].bet = this.bigBlind;
+            currentPlayerPos = 2;
+            this.requiredBet = bigBlind;    // Security, shouldn't be needed
+        }
+        else{
+            currentPlayerPos = 0;
+        }
+        while(this.players[currentPlayerPos].bet < this.requiredBet){ // While not everyone had a chance to make move AND requiredBet is not met.
+            // Can we eliminate the first condition by starting at 2?
+            // Attempted using the if-else above.
+            currentPlayerPos = currentPlayerPos % this.players.length;
+            if(this.players.length === 1){
+                winByKO();
+            }
+            this.players[currentPlayerPos].availableMoves()
+            if(this.players.bet > this.requiredBet){
+                this.requiredBet = this.players.bet;
+            }
+            if(this.players.hand.length === 0){
+                // Player has folded. Remove player
+                this.players.splice(currentPlayerPos, 1);
+            }
+            else{currentPlayerPos ++;}
+        }
 
-        this.players.forEach( player =>{ //Probably bad if players is an object.
-            // SmallBlind will be player[0]
-            // BigBlind will be player[1]
-            player.availablesMoves()
+        // this.players.forEach( player =>{ //Probably bad if players is an object.
+        //     // SmallBlind will be player[0]
+        //     // BigBlind will be player[1]
+        //     player.availablesMoves()
 
-            // player.bet use to track player's bet. 
-                // Needs to be kept separate before end of round.
-                // Goes into pot when round ends.
+        //     // player.bet use to track player's bet. 
+        //         // Needs to be kept separate before end of round.
+        //         // Goes into pot when round ends.
             
-        })
+        // })
+        this.firstRound = false;
     }
 
     flop(){
@@ -68,6 +98,10 @@ module.exports = class PokerGame {
         // return this.community;
     }
 
+    winByKO(){
+        // Winning because everyone else folded.
+        this.winner = this.players[0];
+    }
     
 
 }
