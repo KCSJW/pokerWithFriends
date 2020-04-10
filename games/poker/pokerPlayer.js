@@ -9,7 +9,7 @@ module.exports = class PokerPlayer {
         this.id = user.id;
         this.seat = seatNumber; //MAYBE use to track prevSmallBlind
         this.bet = 0;
-        this.requiredBet = 0;
+        this.requiredBet = 0;   // Don't think this is needed. It is the same as requiredBet on pokerGame
         this.hand = [];         // Player's 2 cards
         this.money = money,     // Subject to change
         // score: 0,
